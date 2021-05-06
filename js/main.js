@@ -1,5 +1,6 @@
 const hamburger=document.querySelector(".menu-btn");
 const menuList=document.querySelector(".menu-list");
+const lists=document.querySelectorAll(".lists")
 
 hamburger.addEventListener('click',toggleMenu);
 
@@ -18,3 +19,5 @@ function toggleMenu(){
     }
 
 }
+
+lists.forEach((item)=> item.addEventListener("click", toggleMenu));

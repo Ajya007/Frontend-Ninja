@@ -2,8 +2,6 @@
     box-sizing: border-box;
     margin:0;
     padding:0;
-    
- 
 }
 
 body{
@@ -11,6 +9,10 @@ body{
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+  
 /* Global Decleration*/
 
 $primary-color:#fff;
@@ -21,9 +23,7 @@ $light-text: #9b9b9b;
 @mixin easeOut {
     transition: all 0.5s ease-out;
   }
-
-
-  /* Header Section*/
+/* Header Section*/
 
   .header-container{
      background-image:linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5) ), url(../img/showcase.jpg);
@@ -31,7 +31,7 @@ $light-text: #9b9b9b;
      background-position: center;
      background-repeat: no-repeat;
       width: 100vw;
-      height: 100vh;
+      min-height: 100vh;
       position: relative;
   }
   
@@ -92,6 +92,7 @@ $light-text: #9b9b9b;
           a{
               text-decoration: none;
               color:$primary-color;
+              @include easeOut;
               &:hover{
                   color: $onhover;
               }
@@ -169,9 +170,15 @@ $light-text: #9b9b9b;
         gap:1rem;
         color:$primary-color;
         align-items: center;
-        
+        cursor: pointer;
+        border: none;
+        @include easeOut;
+        &:hover{
+            background-color: $onhover;
+        }
         section{
             padding:2px 3px;
+  
         }
     }
     
@@ -179,10 +186,63 @@ $light-text: #9b9b9b;
 
 
 
+/* About Page Styling*/
+
+.about{
+    min-height: 100vh;
+    .abt-head{
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+        h1{
+            font-size: 1.5rem;
+            color: $light-text;
+        }
+    }
+    
+    .card{
+        width: 90%;
+        margin: auto;
+        
+    }
+    .cards{
+        max-width:350px;
+        padding:20px 15px;
+        margin: auto;
+        margin-top: 10px;
+
+        display: flex;
+        flex-direction:  column;
+        gap:1rem;
+        justify-items: center;
+        img{
+        max-width: 100%;
+        }
+        h1{
+            color: $secondary-color;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        p{
+            color: $light-text;
+            text-align: center;
+        }
+    }
+
+   
+   
+
+
+}
+
+
+
+
 /* Media queries for desktop*/
 
 @media screen and (min-width:768px){
 
+    /* Header Section*/
     header{
         display: flex;
         justify-content: space-between;
@@ -203,6 +263,8 @@ $light-text: #9b9b9b;
         transform: translate(0);
        
     }
+
+    /* Showcase Section*/
     .showcase{
         width: 90vw;
         h1{
@@ -216,6 +278,28 @@ $light-text: #9b9b9b;
             width: 200px;
             color: #fff;
         }
-
     }
-}
+
+
+/* About Page Styling*/
+
+    .about{
+        .abt-head{
+            margin-top: 80px;
+            h1{
+                font-size: 4rem;
+                padding: 20px 0;
+                font-weight: 400;
+            }
+        }
+    }
+    .card{
+        display: flex; 
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        }
+    
+    }
+
+
+

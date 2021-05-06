@@ -10,6 +10,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Global Decleration*/
 /* Header Section*/
 .header-container {
@@ -19,7 +23,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -113,6 +117,8 @@ header h2 {
 .menu-list li a {
   text-decoration: none;
   color: #fff;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .menu-list li a:hover {
@@ -210,14 +216,75 @@ header h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
+  border: none;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.showcase .btn-1:hover {
+  background-color: #70c919;
 }
 
 .showcase .btn-1 section {
   padding: 2px 3px;
 }
 
+/* About Page Styling*/
+.about {
+  min-height: 100vh;
+}
+
+.about .abt-head {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.about .abt-head h1 {
+  font-size: 1.5rem;
+  color: #9b9b9b;
+}
+
+.about .card {
+  width: 90%;
+  margin: auto;
+}
+
+.about .cards {
+  max-width: 350px;
+  padding: 20px 15px;
+  margin: auto;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.about .cards img {
+  max-width: 100%;
+}
+
+.about .cards h1 {
+  color: #27ad6c;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.about .cards p {
+  color: #9b9b9b;
+  text-align: center;
+}
+
 /* Media queries for desktop*/
 @media screen and (min-width: 768px) {
+  /* Header Section*/
   header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -246,6 +313,7 @@ header h2 {
     -webkit-transform: translate(0);
             transform: translate(0);
   }
+  /* Showcase Section*/
   .showcase {
     width: 90vw;
   }
@@ -259,6 +327,25 @@ header h2 {
   .showcase .btn-1 {
     width: 200px;
     color: #fff;
+  }
+  /* About Page Styling*/
+  .about .abt-head {
+    margin-top: 80px;
+  }
+  .about .abt-head h1 {
+    font-size: 4rem;
+    padding: 20px 0;
+    font-weight: 400;
+  }
+  .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 /*# sourceMappingURL=style.css.map */
