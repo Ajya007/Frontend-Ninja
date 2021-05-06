@@ -227,14 +227,92 @@ $light-text: #9b9b9b;
             color: $light-text;
             text-align: center;
         }
+    }}
+
+    /* Resources Styling*/
+   .resources{
+       width: 100vw;
+       min-height: 100vh;
+   }
+    .boxes{
+        width:90%;
+        margin: auto;
     }
 
-   
-   
+    .box{
+        max-width:450px;
+        height: 500px;
+        padding: 50px 50px;
+        display: flex;
+        flex-direction: column;
+        gap:2rem;   
+        margin: auto;
+        .box-header{
+            font-size: 2.5rem;
+            color:$light-text;
+            font-weight: 400;   
+            
+        }
+        section{
+            height: 50px;
+        }
+        img{
+            width: 20px;
+            height: 20px;
+        }
 
+        a{
+            padding: 20px 0;  
+            max-width: 400px;
+            text-decoration: none;
+            color:$secondary-color;
+            font-size: 0.8rem;
+        
+        }
+    }
+ /* Boxes with no logo(wl) Styling*/
+        .wl{      
+        display: flex;
+        border-bottom:1px solid rgba(184, 182, 182, 0.479) ;
+        align-items: center;
+        gap:1rem;
+        color:$secondary-color;
+        h1{
+            font-size: 0.8rem;
+        }
+    }
 
-}
+    /* Boxes with no logo(wnl) Styling*/
 
+    .wnl{      
+        border-bottom:1px solid rgba(173, 169, 169, 0.589) ;
+        gap:1rem;
+        color:$secondary-color;
+        h1{
+            font-size: 0.8rem;
+        }
+        p{
+            font-size: 0.5rem;
+            color: rgba(110, 108, 108, 0.685) ;
+        }
+    }
+
+    .ninja{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:1rem;
+        margin: auto;
+        .line{
+            width: 100px;
+            height: 1px;
+            background-color: $onhover;
+        }
+        .ninja-logo{
+            font-size: 1.5rem;
+            color: $onhover;
+        }
+    }
 
 
 
@@ -299,6 +377,54 @@ $light-text: #9b9b9b;
         flex-wrap: wrap;
         }
     
+
+
+        .boxes{
+           display: flex;
+           justify-content: space-around;
+        }
+    
+
+        .box{
+            .box-header{
+                white-space: nowrap;
+            }
+            section{
+                min-width: 350px;
+            }
+        }
+
+        /* Ninja Logo Styling*/
+
+        .ninja{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:1rem;
+          
+            .line{
+                width: 150px;
+                height: 1px;
+                background-color: $onhover;
+            }
+            .ninja-logo{
+                color: $onhover;
+                font-size: 2rem;
+                position: relative;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 350px;
+                    height: 1px;
+                    background-color: $onhover;
+                    transform: rotate(90deg);
+                    left: -165px;
+                    top: -250px;
+                }
+            }
+        }
+
+
     }
 
 

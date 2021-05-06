@@ -282,6 +282,113 @@ header h2 {
   text-align: center;
 }
 
+/* Resources Styling*/
+.resources {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.boxes {
+  width: 90%;
+  margin: auto;
+}
+
+.box {
+  max-width: 450px;
+  height: 500px;
+  padding: 50px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  margin: auto;
+}
+
+.box .box-header {
+  font-size: 2.5rem;
+  color: #9b9b9b;
+  font-weight: 400;
+}
+
+.box section {
+  height: 50px;
+}
+
+.box img {
+  width: 20px;
+  height: 20px;
+}
+
+.box a {
+  padding: 20px 0;
+  max-width: 400px;
+  text-decoration: none;
+  color: #27ad6c;
+  font-size: 0.8rem;
+}
+
+/* Boxes with no logo(wl) Styling*/
+.wl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid rgba(184, 182, 182, 0.479);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  color: #27ad6c;
+}
+
+.wl h1 {
+  font-size: 0.8rem;
+}
+
+/* Boxes with no logo(wnl) Styling*/
+.wnl {
+  border-bottom: 1px solid rgba(173, 169, 169, 0.589);
+  gap: 1rem;
+  color: #27ad6c;
+}
+
+.wnl h1 {
+  font-size: 0.8rem;
+}
+
+.wnl p {
+  font-size: 0.5rem;
+  color: rgba(110, 108, 108, 0.685);
+}
+
+.ninja {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  margin: auto;
+}
+
+.ninja .line {
+  width: 100px;
+  height: 1px;
+  background-color: #70c919;
+}
+
+.ninja .ninja-logo {
+  font-size: 1.5rem;
+  color: #70c919;
+}
+
 /* Media queries for desktop*/
 @media screen and (min-width: 768px) {
   /* Header Section*/
@@ -346,6 +453,53 @@ header h2 {
             justify-content: space-evenly;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+  .boxes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .box .box-header {
+    white-space: nowrap;
+  }
+  .box section {
+    min-width: 350px;
+  }
+  /* Ninja Logo Styling*/
+  .ninja {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1rem;
+  }
+  .ninja .line {
+    width: 150px;
+    height: 1px;
+    background-color: #70c919;
+  }
+  .ninja .ninja-logo {
+    color: #70c919;
+    font-size: 2rem;
+    position: relative;
+  }
+  .ninja .ninja-logo::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 1px;
+    background-color: #70c919;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    left: -165px;
+    top: -250px;
   }
 }
 /*# sourceMappingURL=style.css.map */
