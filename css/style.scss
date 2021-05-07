@@ -23,6 +23,9 @@ $light-text: #9b9b9b;
 @mixin easeOut {
     transition: all 0.5s ease-out;
   }
+  @mixin easeIn {
+    transition: all 0.5s ease-in;
+  }
 /* Header Section*/
 
   .header-container{
@@ -197,6 +200,7 @@ $light-text: #9b9b9b;
         h1{
             font-size: 1.5rem;
             color: $light-text;
+            font-weight: 400;  
         }
     }
     
@@ -248,7 +252,7 @@ $light-text: #9b9b9b;
         gap:2rem;   
         margin: auto;
         .box-header{
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             color:$light-text;
             font-weight: 400;   
             
@@ -267,6 +271,10 @@ $light-text: #9b9b9b;
             text-decoration: none;
             color:$secondary-color;
             font-size: 0.8rem;
+            @include easeIn;
+            &:hover{
+                color: $onhover;
+            }
         
         }
     }
@@ -277,8 +285,14 @@ $light-text: #9b9b9b;
         align-items: center;
         gap:1rem;
         color:$secondary-color;
+        
         h1{
             font-size: 0.8rem;
+            cursor: pointer;
+            @include easeIn;
+            &:hover{
+                color: $onhover;
+            }
         }
     }
 
@@ -290,6 +304,11 @@ $light-text: #9b9b9b;
         color:$secondary-color;
         h1{
             font-size: 0.8rem;
+            cursor: pointer;
+            @include easeIn;
+            &:hover{
+                color: $onhover;
+            }
         }
         p{
             font-size: 0.5rem;
@@ -314,6 +333,86 @@ $light-text: #9b9b9b;
         }
     }
 
+     /* Food Page Styling*/
+
+    .food-title{
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+        padding: 20px 0;
+        h1{
+            color: $light-text;
+            font-size: 1.5rem;
+            font-weight: 400;  
+        }
+        p{
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: $light-text;
+            position: relative;
+          
+        }
+    }
+
+
+
+     /* Paragraph with smily Styling*/
+
+     #edit{
+        margin: 0 15px;
+        letter-spacing: 0.5rem;
+    }
+
+    #dash-1{
+        position: relative;
+        &::before{
+            content: "-";
+        position: absolute;
+        transform: translate(-6px,-6px);
+    }}
+
+    #dash-2{
+        position: relative;
+        &::after{
+            content:"-";
+        position: absolute;
+        transform: translate(-5px,-6px);
+         }}
+
+    #eyes{
+        position: relative;
+        &::after{
+            content: '"';
+            position: absolute;
+        transform: rotate(-45deg);
+        left:7px;
+        top:-4px;
+
+        }}
+
+    #curve{
+        position: relative;
+        &::before{
+            content: ")";
+            position: absolute;
+            transform: rotate(35deg);
+            left:-12px;
+            top:0px;
+
+        }}
+
+        
+  /* Food photos Styling*/
+        .food-photos{
+            display: block;
+            section{
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+        }
 
 
 /* Media queries for desktop*/
@@ -365,7 +464,7 @@ $light-text: #9b9b9b;
         .abt-head{
             margin-top: 80px;
             h1{
-                font-size: 4rem;
+                font-size: 2.5rem;
                 padding: 20px 0;
                 font-weight: 400;
             }
@@ -377,7 +476,7 @@ $light-text: #9b9b9b;
         flex-wrap: wrap;
         }
     
-
+  /* Resource Page Styling*/
 
         .boxes{
            display: flex;
@@ -387,6 +486,7 @@ $light-text: #9b9b9b;
 
         .box{
             .box-header{
+                font-size: 2.5rem;
                 white-space: nowrap;
             }
             section{
@@ -403,7 +503,7 @@ $light-text: #9b9b9b;
             gap:1rem;
           
             .line{
-                width: 150px;
+                width: 110px;
                 height: 1px;
                 background-color: $onhover;
             }
@@ -424,6 +524,26 @@ $light-text: #9b9b9b;
             }
         }
 
+/* Some random food Styling*/
+        .food-title{
+            h1{
+                font-size: 2.5rem; 
+            }}
+
+
+      /* Food photos Styling*/
+            .food-photos{
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+                section{
+                    height: 300px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+            }
 
     }
 
