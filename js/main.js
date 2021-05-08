@@ -1,6 +1,9 @@
 const hamburger=document.querySelector(".menu-btn");
 const menuList=document.querySelector(".menu-list");
-const lists=document.querySelectorAll(".lists")
+const lists=document.querySelectorAll(".lists");
+const contactOpen=document.querySelector("#contact");
+const contact=document.querySelector(".contact");
+const contactClose=document.querySelector(".btn-3");
 
 hamburger.addEventListener('click',toggleMenu);
 
@@ -21,3 +24,13 @@ function toggleMenu(){
 }
 
 lists.forEach((item)=> item.addEventListener("click", toggleMenu));
+
+
+
+contactOpen.addEventListener('click',() =>{
+    contact.classList.add('show');
+});
+
+contactClose.addEventListener('click',() =>{
+    contact.classList.remove('show');
+});
