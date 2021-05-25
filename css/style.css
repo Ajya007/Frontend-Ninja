@@ -6,8 +6,12 @@
 }
 
 body {
-  font: 15px/1.5 helvetica,san-serif;
   overflow-x: hidden;
+}
+
+.whole-container {
+  max-width: 73.125em;
+  margin: auto;
 }
 
 html {
@@ -247,7 +251,7 @@ header h2 {
 
 /* About Page Styling*/
 .about {
-  min-height: 100vh;
+  padding: 50px 0;
 }
 
 .about .abt-head {
@@ -268,7 +272,7 @@ header h2 {
 }
 
 .about .cards {
-  max-width: 350px;
+  max-width: 320px;
   padding: 20px 15px;
   margin: auto;
   margin-top: 10px;
@@ -300,8 +304,8 @@ header h2 {
 
 /* Resources Styling*/
 .resources {
+  padding: 50px 0;
   width: 100vw;
-  min-height: 100vh;
 }
 
 .boxes {
@@ -310,7 +314,7 @@ header h2 {
 }
 
 .box {
-  max-width: 450px;
+  max-width: 320px;
   height: 500px;
   padding: 50px 50px;
   display: -webkit-box;
@@ -505,14 +509,24 @@ header h2 {
   display: block;
 }
 
+.food-photos section {
+  height: 0;
+  padding: 40% 0;
+  position: relative;
+  overflow: hidden;
+}
+
 .food-photos section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /*Work Section Styling*/
 .work {
-  min-height: 100vh;
   background-color: #423633;
 }
 
@@ -913,17 +927,21 @@ footer p {
   .food-photos {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
   .food-photos section {
-    height: 300px;
+    height: 0;
+    padding: 50% 0;
+    position: relative;
+    overflow: hidden;
   }
   .food-photos section img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   /* Work Section Styling*/
   .work-header h1 {
@@ -932,9 +950,19 @@ footer p {
   .work-content {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 2rem;
+  }
+  .food-container {
+    width: 100vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .food-container {
+    max-width: 1380px;
+    margin: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */

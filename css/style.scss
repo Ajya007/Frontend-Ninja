@@ -5,10 +5,12 @@
 }
 
 body{
-    font:15px/1.5 helvetica,san-serif;
     overflow-x: hidden;
 }
-
+.whole-container{
+    max-width: 73.125em;
+    margin:auto;
+}
 html {
     scroll-behavior: smooth;
   }
@@ -210,7 +212,8 @@ $light-text: #9b9b9b;
 /* About Page Styling*/
 
 .about{
-    min-height: 100vh;
+    padding:50px 0;
+    
     .abt-head{
         width: 100%;
         text-align: center;
@@ -228,7 +231,7 @@ $light-text: #9b9b9b;
         
     }
     .cards{
-        max-width:350px;
+        max-width:320px;
         padding:20px 15px;
         margin: auto;
         margin-top: 10px;
@@ -253,8 +256,9 @@ $light-text: #9b9b9b;
 
     /* Resources Styling*/
    .resources{
+    padding:50px 0;
        width: 100vw;
-       min-height: 100vh;
+      
    }
     .boxes{
         width:90%;
@@ -262,7 +266,7 @@ $light-text: #9b9b9b;
     }
 
     .box{
-        max-width:450px;
+        max-width:320px;
         height: 500px;
         padding: 50px 50px;
         display: flex;
@@ -424,9 +428,18 @@ $light-text: #9b9b9b;
         .food-photos{
             display: block;
             section{
+                height:0;
+            padding:40% 0;
+            position: relative;
+            overflow: hidden;
+
                 img{
+                    position: absolute;
+                    top:0;
+                    left:0;
+                 display: block;
                     width: 100%;
-                    height: auto;
+                    height: 100%;
                 }
             }
 
@@ -437,7 +450,7 @@ $light-text: #9b9b9b;
 
         /*Work Section Styling*/
         .work{
-            min-height: 100vh;
+            
             background-color: $darkslate-grey;
         }
           .work-header{
@@ -779,13 +792,20 @@ $light-text: #9b9b9b;
       /* Food photos Styling*/
             .food-photos{
                 display: grid;
-                grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+                grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
                 section{
-                    height: 300px;
+                    height: 0;
+                    padding: 50% 0;
+                    position: relative;
+                    overflow: hidden;
                     img{
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
+                        
+                        min-width: 100%;
+                        min-height: 100%;
+                        position: absolute;
+                        top:0;
+                        left:0;
+
                     }
                 }
             }
@@ -801,12 +821,25 @@ $light-text: #9b9b9b;
 
         .work-content{
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
             grid-gap: 2rem;
             }
         
+            .food-container{
+                width: 100vw;
+              
+            }
 
 
+    }
+
+
+    @media screen and (min-width:1200px){
+      
+        .food-container{
+            max-width: 1380px;
+            margin: auto;
+        }
     }
 
 
