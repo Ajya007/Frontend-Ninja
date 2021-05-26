@@ -14,10 +14,12 @@ function toggleMenu(){
     if(showMenu){
         menuList.classList.add('show');
         hamburger.classList.add('close')
+        lists.forEach((item)=> item.classList.add('show'))
 
     }
     else{
         menuList.classList.remove('show');
+        lists.forEach((item)=> item.classList.remove('show'))
         hamburger.classList.remove('close')
     }
 

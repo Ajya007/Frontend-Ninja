@@ -5,7 +5,8 @@
   padding: 0;
 }
 
-body {
+.main {
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -62,7 +63,7 @@ html {
 }
 
 header {
-  position: relative;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,14 +128,14 @@ header h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
-  right: 0;
+  right: 0px;
   top: 0px;
   width: 60vw;
   height: 50vh;
   background-color: rgba(32, 31, 30, 0.568);
+  z-index: 2;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  z-index: 2;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
@@ -144,11 +145,15 @@ header h2 {
           transform: translateX(0);
 }
 
-.menu-list li {
+.menu-list .lists {
   list-style: none;
 }
 
-.menu-list li a {
+.menu-list .lists.show {
+  display: block;
+}
+
+.menu-list .lists a {
   font-size: 1rem;
   text-decoration: none;
   color: #fff;
@@ -156,7 +161,7 @@ header h2 {
   transition: all 0.5s ease-out;
 }
 
-.menu-list li a:hover {
+.menu-list .lists a:hover {
   color: #70c919;
 }
 
@@ -805,6 +810,12 @@ footer p {
           transform: rotate(-45deg) translate(7px, -6px);
 }
 
+@media screen and (min-width: 468px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
 /* Media queries for desktop*/
 @media screen and (min-width: 768px) {
   /* Header Section*/
@@ -875,8 +886,9 @@ footer p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .box .box-header {
     font-size: 2.5rem;
